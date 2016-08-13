@@ -22,23 +22,16 @@
 
 
 <body align="center">
-	<!--<table>
-		<tr><td>
-			<a href="https://github.com/HeatherRB">
-				<div id="myCanvas" class="margin"></div>
-			</a>
-		</td><td>
-			<div class="margin">
-				<h1>Heather Reeve-Black</h1>
-			</div>
-		</td></tr>
-	</table>-->
 	
+	<!-- main canvas with animation (sketch.js) -->
 	<div id="myCanvas" class="margin">
+		
+		<!-- contents menu, which lies on top of animation -->
 		<div id="contentBox">
 			<h1>Heather Reeve-Black</h1>
 			
 			<h2 onclick="popOut()" class="menuItem">Curriculum Vitae</h2>
+			<!-- menu item, initially hidden -->
 			<div id="CV" class="menuBox">
 				<p>Lorem ipsum dolor sit amet, duo paulo recteque te, sed in tacimates periculis euripidis, pri affert dignissim contentiones ea. Luptatum adolescens interesset mei ei, ut autem labitur salutandi mel. Hinc tollit suavitate qui ei, ne aeterno dolorem salutatus mea. Vix accusamus interesset consequuntur ex, quem sale maiorum usu ad.</p>
 				
@@ -55,19 +48,19 @@
 	</div>
 	
 	<script>
+		// height/width of the background animation (see sketch.js)
 		var canvasWidth = Math.max(window.innerWidth, window.innerHeight, 1000)-50;
 		
+		// set width of div which holds the animation
 		var canvasBox = document.getElementById("myCanvas");
 		canvasBox.style.width = canvasWidth;
 		
+		// set width of the contentBox which sits on top of animation
 		var contentBox = document.getElementById("contentBox");
+		// box should be half of canvas width (right=50, padding=30)
 		contentBox.style.width = canvasWidth/2-50-30;
-		
-		var menuBox = document.getElementById("CV");
-		
-		
-		
-		canvasBox.style.width = canvasWidth;
+
+		// popOut displays the contents of the menu by expanding height of hidden divs
 		function popOut() {
 			var elem = document.getElementById("CV");
 			var maxHeight = elem.scrollHeight;
@@ -83,6 +76,7 @@
 				}
 			}
 		}
+		// popIn re-hides menu contents
 		function popIn() {
 			var elem = document.getElementById("CV");
 			var heightString = elem.style.height;
