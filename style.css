@@ -5,7 +5,7 @@ body {
 #  background-image: url(reticular_tissue/reticular_tissue.png);
 	font-family: 'Pontano Sans', sans-serif;
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 16px;
 	color: #BDBDBD;
 	height: 100%;
 	margin: 0;
@@ -26,6 +26,31 @@ h2 {
 
 h3, li.menu {
 	font-size: 18px;
+	margin: 0px;
+}
+
+th {
+	text-align: center;
+	padding: 0px 10px 0px 10px;
+	border-style: solid;
+	border-width: 1pt;
+	border-radius: 3pt;
+	border-colour: #303030;
+	background: rgba(189, 189, 189, 0.5); #grey #bdbdbd;
+}
+
+td {
+	padding: 0px 3px 0px 20px;
+	border-style: solid;
+	border-width: 1pt;
+	border-radius: 3pt;
+	border-colour: #303030;
+	vertical-align: top;
+	background: rgba(118, 215, 196, 0.3); #light turqoise #76D7C4
+}
+
+tr {
+	height: 50px;
 }
 
 a {
@@ -35,14 +60,6 @@ a {
 ul {
 	list-style-type: square;
 	margin: 15px 30px 15px 30px;
-}
-
-table {
-    padding: 50px;
-}
-
-td {
-    vertical-align: top;
 }
 
 div.linked {
@@ -80,7 +97,7 @@ div.margin {
 
 #contentBox {
 	#background: rgba(255, 143, 0, 0.7) #orange;
-	background: rgba(20, 143, 119, 0.7);
+	background: rgba(30,187,166, 0.7); #turqoise;
 	color: #303030;
 	padding: 15px;
 	margin: 0;
