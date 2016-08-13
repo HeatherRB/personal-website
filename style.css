@@ -1,29 +1,27 @@
 html { height: 100% }
 body {
-  background: #CDC5BF;
+#	background: #CDC5BF;
+	background: #303030;
 #  background-image: url(reticular_tissue/reticular_tissue.png);
-	font-family: 'Raleway', sans-serif;
-	font-weight: 300;
+	font-family: 'Pontano Sans', sans-serif;
+	font-weight: 400;
 	font-size: 14px;
-	color: #000000;
+	color: #BDBDBD;
 	height: 100%;
 	margin: 0;
 }
 
 h1 {
     font-size: 35px;
-	font-weight: ultra-bold;
-	text-transform: uppercase;
-	padding: 0;
+	font-weight: 300;
 	text-align: center;
-	border-style: dotted;
 	display: inline-block;
-	padding: 20px;
-	margin: 0;
+	padding: 0px;
+	margin: 20px 0px 20px 0px;
 }
 
 h2,h3,ul,p {
-	margin: 15px;
+	margin: 0px;
 	padding: 0;
 }
 
@@ -44,8 +42,12 @@ ul {
 	margin: 15px 30px 15px 30px;
 }
 
-img.padded {
-    padding: 10px;
+table {
+    padding: 50px;
+}
+
+td {
+    vertical-align: top;
 }
 
 div.linked {
@@ -63,16 +65,7 @@ li.menu {
 hr {
 	display: block;
 }
-div#h1_front_page {
-	margin: 10%;
-}
-div.h1 {
-	text-align: center;
-	border-style: dotted;
-	display: inline-block;
-	padding: 2px;
-	margin: 15px;
-}
+
 div.center {
 	text-align: center;
 }
@@ -83,28 +76,11 @@ div.page {
 	#border-style: outset;
 	width: 80%;
 }
-img.square {
-    position: absolute;
-    clip: rect(0px,175px,175px,0px);
-}
-img#tnt {
-    position: absolute;
-	left: -100px;
-    clip: rect(0px,275px,175px,100px);
-}
-img#bd {
-    position: absolute;
-	height: 175px;
-	left: -75px;
-    clip: rect(0px,250px,175px,75px);
-}
-div.image_container {
+
+div.margin {
 	text-align: left;
-	display: inline-block;
 	position: relative;
 	padding: 0;
 	margin: 15px;
-	width: 175px;
-	height: 175px;
 }
 
