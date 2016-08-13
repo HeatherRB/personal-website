@@ -19,7 +19,8 @@ var lambda = 2*Math.cos(2*Math.PI*nu);
 var delay_time = 75;	// delay time between lines added
 
 // canvas size
-var N = 500;
+//var N = 500;
+var N = Math.max(window.innerWidth, window.innerHeight, 1000)-50;
 
 // counter and list of lines drawn
 var line_count = 0;
@@ -31,19 +32,21 @@ var lines = [];
 
 function setup() {
 	
+	console.log(N);
+	
 	// set-up canvas
 	var canvas = createCanvas(N, N);
 	canvas.parent('myCanvas');
-	background(40);
+	background('#353535');
 	stroke('#BDBDBD');
-	fill(40);
+	fill('#353535');
 	rect(0, 0, N-1, N-1);
 	
 	// start with the lower edge of the square
 	var line0 = new LineSegment(.0, .0, 1.0, .0);
 	lines.push(line0);
 	
-	frameRate(3);
+	frameRate(10);
 }
 
 
@@ -155,9 +158,9 @@ function LineSegment (x1, y1, x2, y2) {
 	
 	//integer coordinates for drawing
 	this.m1 = round(this.x1*N);
-	this.n1 = round(this.y1*N);
+	this.n1 = N - round(this.y1*N);
 	this.m2 = round(this.x2*N);
-	this.n2 = round(this.y2*N);
+	this.n2 = N - round(this.y2*N);
 
 	// transform the line under rotation F
 	this.image = function() {
@@ -178,9 +181,9 @@ function LineSegment (x1, y1, x2, y2) {
 	// calculate the integer corrdinates (to be used for drawing)
 	this.set_pixel_coords = function() {
 		this.m1 = round(this.x1*N);
-		this.n1 = round(this.y1*N);
+		this.n1 = N - round(this.y1*N);
 		this.m2 = round(this.x2*N);
-		this.n2 = round(this.y2*N);
+		this.n2 = N - round(this.y2*N);
 	}
 	this.length = function() {
 		return sqrt((this.x2-this.x1)*(this.x2-this.x1) + (this.y2-this.y1)*(this.y2-this.y1));
@@ -228,6 +231,6 @@ var findLine = function(seg) {
 		check = seg.equals(lines[i]);
 		i++;
 	}
-	console.log(check);
+	//console.log(check);
 	return check;
 }
