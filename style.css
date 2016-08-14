@@ -50,7 +50,7 @@ td {
 }
 
 tr {
-	height: 50px;
+	height: 56px;
 }
 
 a {
@@ -107,6 +107,10 @@ div.margin {
 	top: 50px;
 	right: 50px;
 	text-align: right;
+}
+
+p {
+	margin: 0px 0px 10px 0px;
 }
 
 .menuItem {
