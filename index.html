@@ -54,14 +54,8 @@
 							
 							<p>Applied Mathematics PhD</p>
 							
-							<p>Thesis<br>
-							<a href="http://arxiv.org/abs/1405.7913" target="_blank">'Near-integrable behaviour in a family of discretised rotations'</a></p>
-							
-							<p>Publications<br>
-							<a href="http://www.sciencedirect.com/science/article/pii/S0167278914001778" target="_blank">H. Reeve-Black &#38; F. Vivaldi, Physica D 290, 2015</a>
-							<a href="http://arxiv.org/abs/1405.7918" target="_blank">(arXiv)</a><br>
-							<a href="http://iopscience.iop.org/0951-7715/26/5/1227" target="_blank">H. Reeve-Black &#38; F. Vivaldi, Nonlinearity 26, 2013</a>
-							<a href="http://arxiv.org/abs/1208.1132v2" target="_blank">(arXiv)</a></p>
+							<p>Thesis title<br>
+							<a href="http://arxiv.org/abs/1405.7913" target="_blank">Near-integrable behaviour in a family of discretised rotations</a></p>
 						</td>
 					</tr><tr>
 						<th>2013</th>
@@ -213,6 +207,7 @@
 			var elem = document.getElementById(elementId);
 			var heightString = elem.style.height;
 			var val = int(heightString.replace("px",""));
+			// expand/contract the selected menu div
 			if (val > 0) {
 				clearInterval(menuInterval);
 				popIn(elementId);
