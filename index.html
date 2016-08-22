@@ -133,12 +133,12 @@
 		
 		// set width of div which holds the animation
 		var canvasBox = document.getElementById("myCanvas");
-		canvasBox.style.width = canvasWidth;
+		canvasBox.style.width = canvasWidth + 'px';
 		
 		// set width of the contentBox which sits on top of animation
 		var contentBox = document.getElementById("contentBox");
 		// box should be half of canvas width (right=50, padding=30)
-		contentBox.style.width = canvasWidth/2-50-30;
+		contentBox.style.width = (canvasWidth/2-50-30) + 'px';
 
 		// popOut displays the contents of the menu by expanding height of hidden divs
 		function popOut() {
