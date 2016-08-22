@@ -115,6 +115,10 @@ div.margin {
 	text-align: right;
 }
 
+#myCanvas {
+	margin: auto;
+}
+
 p {
 	margin: 0px 0px 10px 0px;
 }
