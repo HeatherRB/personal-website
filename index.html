@@ -31,7 +31,7 @@
 		<div id="contentBox">
 			<h1>Heather Reeve-Black</h1>
 			
-			<h2 onclick="popOut('CV')" class="menuItem">Curriculum Vitae</h2>
+			<h2 onclick="popInOut('CV')" class="menuItem">Curriculum Vitae</h2>
 			<!-- menu item, initially hidden -->
 			<div id="CV" class="menuBox">
 				<!--<h3 class="menuItem">2010-14, Queen Mary, University of London</h3>
@@ -139,17 +139,33 @@
 		var contentBox = document.getElementById("contentBox");
 		// box should be half of canvas width (right=50, padding=30)
 		contentBox.style.width = (canvasWidth/2-50-30) + 'px';
+		
+		var menuInterval;
 
+		// selects whether to expand or contract a menu div
+		function popInOut(elementId) {
+			var elem = document.getElementById(elementId);
+			var heightString = elem.style.height;
+			var val = int(heightString.replace("px",""));
+			if (val > 0) {
+				clearInterval(menuInterval);
+				popIn(elementId);
+			} else {
+				clearInterval(menuInterval);
+				popOut(elementId);
+			}
+		}
+		
 		// popOut displays the contents of the menu by expanding height of hidden divs
 		function popOut(elementId) {
 			var elem = document.getElementById(elementId);
 			var maxHeight = elem.scrollHeight;
 			var val = 0;
-			var id = setInterval(frame, 4);
+			menuInterval = setInterval(frame, 2);
 			//elem.style.overflow = 'auto';
 			function frame() {
 				if (val > maxHeight) {
-					clearInterval(id);
+					clearInterval(menuInterval);
 				} else {
 					elem.style.height = val + 'px';
 					val++;
@@ -161,14 +177,14 @@
 			var elem = document.getElementById(elementId);
 			var heightString = elem.style.height;
 			var val = int(heightString.replace("px",""));
-			var id = setInterval(frame, 4);
+			menuInterval = setInterval(frame, 2);
 			//elem.style.overflow = 'hidden';
 			function frame() {
 				if (val > 0) {
 					val--;
 					elem.style.height = val + 'px';
 				} else {
-					clearInterval(id);
+					clearInterval(menuInterval);
 					
 				}
 			}
